@@ -1,2 +1,58 @@
-
- k
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                      <title>My Photography Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+                <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header>
+<span class="logo-icon">📷</span>
+           <h1>My Photography Portfolio</h1>
+</header>
+<main>
+<div class="controls">
+             <input type="text" class="search-bar" id="searchInput" placeholder="Search images..."/>
+<div class="filter-btns" id="filterBtns">
+<button class="active" data-cat="all">All</button>
+<button data-cat="Nature">Nature</button>
+<button data-cat="People">People</button>
+<button data-cat="City lights">City lights</button>
+<button data-cat="Sunset">sunset</button>
+</div>
+</div>
+<div class="gallery" id="gallery"></div>
+<div class="add-form">
+                 <h2>Add a New Image</h2>
+<div class="form-group">
+<label>Image URL:</label>
+       <input type="url" id="imgUrl" placeholder="https://example.com/photo.jpg"/>
+</div>
+<div class="form-group">
+<label>Caption:</label>
+<input type="text" id="imgCaption" placeholder="Enter caption"/>
+</div>
+      <div class="form-group">
+               <label>Category:</label>
+     <select id="imgCategory">
+<option value="Nature">Nature</option>
+<option value="Peopleeople">People</option>
+<option value="City lights">city lights</option>
+<option value="Sunset">sunset</option>
+</select>
+</div>
+       <button class="btn-add" id="addBtn">Add Image</button>
+</div>
+</main>
+ 
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+<button class="lb-close" id="lbClose">✕</button>
+<img id="lbImg" src="" alt=""/>
+<p class="lb-caption" id="lbCaption"></p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
