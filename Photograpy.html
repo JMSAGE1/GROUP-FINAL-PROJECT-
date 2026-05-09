@@ -1,66 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-       <meta charset="UTF-8" />
-       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                      <title>My Photography Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
-                <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Photography Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-<span class="logo-icon">📷</span>
-           <h1>My Photography Portfolio</h1>
-</header>
-<main>
-<div class="controls">
-             <input type="text" class="search-bar" id="searchInput" placeholder="Search images..."/>
-<div class="filter-btns" id="filterBtns">
-<button class="active" data-cat="all">All</button>
 
-<img src="c:\Photography Group Project\images\gcniarien2.jpg" alt="GCNI ARIEN 2" width="150" height="150"/>
-<button data-cat="Nature">Nature</button>
+  <!-- ── HEADER ── -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="header-icon-wrap">
+        <span class="header-icon">&#9728;</span>
+      </div>
+      <h1 class="header-title">My Photography Portfolio</h1>
+      <div class="header-icon-wrap">
+        <span class="header-icon">&#8801;</span>
+      </div>
+    </div>
+  </header>
 
-<img src="c:\Photography Group Project\images\gcniarien1.jpg" alt="GCNI ARIEN 1" width="150" height="150"/>
-<button data-cat="People">People</button>
+  <!-- ── MAIN ── -->
+  <div class="container">
 
-<img src="c:\Photography Group Project\images\gcniarien4.jpg  " alt="GCNI ARIEN 4" width="150" height="150"/>
-<button data-cat="City lights">City lights</button>
+    <!-- Search -->
+    <div class="search-wrapper">
+      <span class="search-icon">&#128269;</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search images…" />
+    </div>
 
-<img src="c:\Photography Group Project\images\arien123.jpg" alt="GCNI ARIEN 2" width="150" height="150"/>
-<button data-cat="Sunset">sunset</button>
-</div>
-</div>
-<div class="gallery" id="gallery"></div>
-<div class="add-form">
-                 <h2>Add a New Image</h2>
-<div class="form-group">
-<label>Image URL:</label>
-       <input type="url" id="imgUrl" placeholder="https://example.com/photo.jpg"/>
-</div>
-<div class="form-group">
-<label>Caption:</label>
-<input type="text" id="imgCaption" placeholder="Enter caption"/>
-</div>
+    <!-- Category tabs -->
+    <div class="tabs">
+      <button class="tab tab-all active"     data-category="all">All</button>
+      <button class="tab tab-nature"         data-category="nature">Nature</button>
+      <button class="tab tab-sunsets"        data-category="sunsets">Sunsets</button>
+      <button class="tab tab-people"         data-category="people">People</button>
+      <button class="tab tab-city"           data-category="city lights">City Lights</button>
+    </div>
+
+    <!-- Result count -->
+    <p class="result-count" id="filterInfo"></p>
+
+    <!-- Gallery -->
+    <div class="gallery" id="gallery"></div>
+
+    <!-- Empty state -->
+    <div class="empty-state" id="emptyState" style="display:none;">
+      <div class="empty-icon">&#9974;</div>
+      <p class="empty-text">No photos yet — add one below!</p>
+    </div>
+
+    <!-- ── ADD IMAGE FORM ── -->
+    <div class="form-card">
+      <h2 class="form-title">Add a New Image</h2>
+
       <div class="form-group">
-               <label>Category:</label>
-     <select id="imgCategory">
-<option value="Nature">Nature</option>
-<option value="People">People</option>
-<option value="City lights">city lights</option>
-<option value="Sunset">sunset</option>
-</select>
-</div>
-       <button class="btn-add" id="addBtn">Add Image</button>
-</div>
-</main>
- 
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-<button class="lb-close" id="lbClose">✕</button>
-<img id="lbImg" src="" alt=""/>
-<p class="lb-caption" id="lbCaption"></p>
-</div>
-<script src="script.js"></script>
+        <label class="form-label" for="imageUrl">Image URL</label>
+        <input class="form-input" type="text" id="imageUrl"
+               placeholder="https://picsum.photos/seed/abc/400/300" autocomplete="off" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="imageCaption">Caption</label>
+        <input class="form-input" type="text" id="imageCaption"
+               placeholder="Enter caption" autocomplete="off" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="imageCategory">Category</label>
+        <select class="form-input form-select" id="imageCategory">
+          <option value="">Select</option>
+          <option value="nature">Nature</option>
+          <option value="sunsets">Sunsets</option>
+          <option value="people">People</option>
+          <option value="city lights">City Lights</option>
+        </select>
+      </div>
+
+      <button class="form-btn" id="addImageBtn">Add Image</button>
+      <p class="form-msg" id="formMessage"></p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
